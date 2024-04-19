@@ -1,0 +1,54 @@
+my_user = User.objects.create_user('Julia Karabasova')
+cat_user = User.objects.create_user('Mayson Catovich')
+
+my_author = Author.objects.create(user=my_user)
+cat_author = Author.objects.create(user=cat_user)
+
+lingvo = Category.objects.create(category="Лингвистика")
+proga = Category.objects.create(category="Программирование")
+animals = Category.objects.create(category="Животные")
+culture = Category.objects.create(category="Культура")
+
+post1 = Post.objects.create(author=my_author, is_news=False, title='Яблоко в языках мира',
+			text='Яблоко очень распространенное слово во многих языках мира. Помидор ("помо д` оро") - яблоко из золота! Апельсин ("аппель син") - яблоко китайское! Помада ("помум") - просто яблоко на латыни! Но не помело:) Помело от слова мести."')
+post2 = Post.objects.create(author=my_author, is_news=False, title='Изучаем Django',
+            text='Самое сложное в этом модуле - это разобраться как на практике использовать ManyToManyField с through таблицей :Р')
+news1 = Post.objects.create(author=cat_author, title='Корма не будет!',
+            text='Итальянские производители отказываются ввозить корм в Россию, предупредите своих хозяев! Закупайтесь в срок!')
+
+PostCategory.objects.create(post=post1, category=lingvo)
+PostCategory.objects.create(post=post1, category=culture)
+
+PostCategory.objects.create(post=post2, category=proga)
+PostCategory.objects.create(post=news1, category=animals)
+
+com1 = Comment.objects.create(post=post1, user=cat_user, text='Лучше бы яблоками со мной поделилась!!!')
+com2 = Comment.objects.create(post=post2, user=my_user, text='Даже в интернете не сразу это найдешь. Но получилось!)')
+com3 = Comment.objects.create(post=news1, user=my_user, text='Боже мой! Уже бегу в пятерочку!!')
+com4 = Comment.objects.create(post=news1, user=cat_user, text='Да какой в пятерочке итальянский корм))')
+
+post1.like()
+post1.like()
+post2.dislike()
+news1.like()
+news1.dislike()
+news1.like()
+
+com1.dislike()
+com2.like()
+com2.like()
+com3.like()
+com4.like()
+com4.like()
+
+my_author.update_rating()
+cat_author.update_rating()
+
+Author.objects.all().order_by('-rating').values('user__username').first()
+
+best_post = Post.objects.all().order_by('-rating').first()
+print(best_post.post_date, best_post.author.user.username, best_post.rating, best_post.title, best_post.preview(), sep='\n')
+
+comments = Comment.objects.filter(post=best_post)
+for comment in comments:
+	print(comment.create_time, comment.user.username, comment.rating, comment.text, sep='\n', end='\n\n')
