@@ -1,3 +1,5 @@
+from news.models import *
+
 my_user = User.objects.create_user('Julia Karabasova')
 cat_user = User.objects.create_user('Mayson Catovich')
 

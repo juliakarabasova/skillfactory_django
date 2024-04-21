@@ -46,6 +46,10 @@ class Post(models.Model):
     def preview(self):
         return self.text[:124] + '...'
 
+    # def __str__(self):
+    #     # заголовок, дата публикации в формате день.месяц.год, затем первые 20 слов текста статьи
+    #     return f'{self.title} ({self.post_date.strftime("%d.%m.%Y")}): {" ".join(self.text.split()[:20])}...'
+
 
 class PostCategory(models.Model):
     post = models.ForeignKey(Post, on_delete=models.CASCADE)
