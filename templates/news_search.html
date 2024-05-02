@@ -12,6 +12,14 @@
 <!-- В контенте на странице мы выводим все товары -->
 {% block content %}
 <h1>Все новости. </h1>
+
+<form action="" method="get">
+   {{ filterset.form.as_p }}
+   <input type="submit" value="Найти" />
+</form>
+
+<br>
+
 <h3>Найдено {{ news|length }} записей</h3>
    <hr>
    {% if news %}

@@ -25,6 +25,9 @@ class Author(models.Model):
 class Category(models.Model):
     category = models.CharField(unique=True, max_length=255)
 
+    def __str__(self):
+        return self.category
+
 
 class Post(models.Model):
     author = models.ForeignKey(Author, null=True, on_delete=models.SET_NULL)

@@ -18,6 +18,17 @@ def censor(value):
     return value
 
 
+@register.filter()
+def to_string(value):
+    return 'Новость' if value == 1 else 'Статья'
+
+
+@register.filter()
+def check_categories(value):
+    print(value, value.__dict__)
+    return value
+
+
 def correct_word(word):
     new_w = ''
     first = True
