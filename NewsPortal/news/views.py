@@ -68,12 +68,12 @@ class NewsCreate(CreateView):
     def form_valid(self, form):
         post = form.save(commit=False)
 
-        author_name = form.cleaned_data['author_name']
-
-        new_user, created = User.objects.get_or_create(username=author_name)
-        author, created = Author.objects.get_or_create(user=new_user)
-
-        post.author = author
+        # author_name = form.cleaned_data['author_name']
+        #
+        # new_user, created = User.objects.get_or_create(username=author_name)
+        # author, created = Author.objects.get_or_create(user=new_user)
+        #
+        # post.author = author
         post.is_news = True
         post.save()
 
@@ -89,12 +89,12 @@ class ArticleCreate(CreateView):
     def form_valid(self, form):
         post = form.save(commit=False)
 
-        author_name = form.cleaned_data['author_name']
-
-        new_user, created = User.objects.get_or_create(username=author_name)
-        author, created = Author.objects.get_or_create(user=new_user)
-
-        post.author = author
+        # author_name = form.cleaned_data['author_name']
+        #
+        # new_user, created = User.objects.get_or_create(username=author_name)
+        # author, created = Author.objects.get_or_create(user=new_user)
+        #
+        # post.author = author
         post.is_news = False
         post.save()
 

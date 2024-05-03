@@ -21,6 +21,9 @@ class Author(models.Model):
         self.rating = post_ratings_sum + author_comment_ratings_sum + post_comment_ratings_sum
         self.save()
 
+    def __str__(self):
+        return self.user.username
+
 
 class Category(models.Model):
     category = models.CharField(unique=True, max_length=255)
