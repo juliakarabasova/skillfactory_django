@@ -168,8 +168,8 @@ STATICFILES_DIRS = [
 SOCIALACCOUNT_PROVIDERS = {
     'google': {
         'APP': {
-            'client_id': '748010322329-r7mkj0ugvjn8bg7cdmcg05k2jiulm7ba.apps.googleusercontent.com',
-            'secret': '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',
+            'client_id': '',
+            'secret': '',
             'key': ''
         }
     }
