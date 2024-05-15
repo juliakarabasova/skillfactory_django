@@ -48,7 +48,7 @@ def send_weekly_update():
         msg = EmailMultiAlternatives(
             subject=subject,
             body=text_content,
-            from_email='juliakarabasova@yandex.ru',
+            from_email='Skillfactory NewsPortal <juliakarabasova@yandex.ru>',
             to=category.subscribers.all().values_list('email', flat=True)
         )
         msg.attach_alternative(html_content, "text/html")

@@ -28,7 +28,7 @@ def notify_subscribers(sender, instance, **kwargs):
         msg = EmailMultiAlternatives(
             subject=f'Новая запись в категории {cat.category}',
             body=text_content,
-            from_email='juliakarabasova@yandex.ru',
+            from_email='Skillfactory NewsPortal <juliakarabasova@yandex.ru>',
             # recipient_list=Category.objects.get(pk=instance.category.pk).subscribers.all()
             to=cat.category.subscribers.all().values_list('email', flat=True)
         )
