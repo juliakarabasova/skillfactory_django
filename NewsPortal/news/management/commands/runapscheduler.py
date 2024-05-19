@@ -98,5 +98,5 @@ class Command(BaseCommand):
             scheduler.start()
         except KeyboardInterrupt:
             logger.info("Stopping scheduler...")
-            scheduler.shutdown()
+            scheduler.shutdown(wait=False)
             logger.info("Scheduler shut down successfully!")

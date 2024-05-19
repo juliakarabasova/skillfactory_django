@@ -1,6 +1,19 @@
 # skillfactory_django
 Repository for whole process of learning Django
 
+## 7. Итоговое задание 28.5.1 (HW-03)
+
+* Запустить celery для сигналов: (venv)...\skillfactory_django\NewsPortal> celery -A NewsPortal worker -l INFO --pool=solo
+* Запустить периодическую задачу: celery -A NewsPortal beat -l INFO
+
+```commandline
+>> 1. Установить Redis.
+>> 2. Установить Celery.
+>> 3. Произвести необходимые конфигурации Django для соединения всех компонентов системы.
+>> 4. Реализовать рассылку уведомлений подписчикам после создания новости.
+>> 5. Реализовать еженедельную рассылку с последними новостями (каждый понедельник в 8:00 утра).
+```
+
 ## 6. Итоговое задание 27.5.4 (HW-03)
 
 * Подписаться на категорию можно по ссылке /news/categories/
