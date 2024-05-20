@@ -3,6 +3,7 @@ Repository for whole process of learning Django
 
 ## 7. Итоговое задание 28.5.1 (HW-03)
 
+* Установить библиотеки celery и redis
 * Запустить celery для сигналов: (venv)...\skillfactory_django\NewsPortal> celery -A NewsPortal worker -l INFO --pool=solo
 * Запустить периодическую задачу: celery -A NewsPortal beat -l INFO
 
