@@ -1,0 +1,31 @@
+2024-07-07 21:46:20,121 ERROR D:\PycharmProjects\Skillfactory\skillfactory_django\venv\Lib\site-packages\django\utils\log.py Internal Server Error: /news/create (<class 'TypeError'>, TypeError("unsupported operand type(s) for -: 'NoneType' and 'NoneType'"), <traceback object at 0x000001F32CA0F4C0>)
+Traceback (most recent call last):
+  File "D:\PycharmProjects\Skillfactory\skillfactory_django\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\PycharmProjects\Skillfactory\skillfactory_django\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\PycharmProjects\Skillfactory\skillfactory_django\venv\Lib\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\PycharmProjects\Skillfactory\skillfactory_django\venv\Lib\site-packages\django\contrib\auth\mixins.py", line 73, in dispatch
+    return super().dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\PycharmProjects\Skillfactory\skillfactory_django\venv\Lib\site-packages\django\contrib\auth\mixins.py", line 109, in dispatch
+    return super().dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\PycharmProjects\Skillfactory\skillfactory_django\venv\Lib\site-packages\django\views\generic\base.py", line 143, in dispatch
+    return handler(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\PycharmProjects\Skillfactory\skillfactory_django\venv\Lib\site-packages\django\views\generic\edit.py", line 182, in post
+    return super().post(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\PycharmProjects\Skillfactory\skillfactory_django\venv\Lib\site-packages\django\views\generic\edit.py", line 151, in post
+    return self.form_valid(form)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\PycharmProjects\Skillfactory\skillfactory_django\NewsPortal\news\views.py", line 83, in form_valid
+    print(post.pk / (post.pk - post.pk))
+                     ~~~~~~~~^~~~~~~~~
+TypeError: unsupported operand type(s) for -: 'NoneType' and 'NoneType'
+2024-07-07 21:46:20,121 ERROR D:\PycharmProjects\Skillfactory\skillfactory_django\venv\Lib\site-packages\django\core\servers\basehttp.py "POST /news/create HTTP/1.1" 500 102494 None
