@@ -206,6 +206,13 @@ CELERY_RESULT_SERIALIZER = 'json'
 # --pool=solo
 
 
+ADMINS = [
+    ('Julia Karabasova', 'karabasova@veta.expert')
+]
+
+SERVER_EMAIL = DEFAULT_FROM_EMAIL
+
+
 LOGGING = {
     'version': 1,
     'disable_existing_loggers': False,
@@ -288,28 +295,23 @@ LOGGING = {
         },
         'django.request': {
             'handlers': ['mail_admins', 'file_errors'],
-            'level': 'ERROR',
-            'propagate': False,
+            'propagate': True,
         },
         'django.server': {
             'handlers': ['mail_admins', 'file_errors'],
-            'level': 'ERROR',
-            'propagate': False,
+            'propagate': True,
         },
         'django.template': {
             'handlers': ['file_errors'],
-            'level': 'ERROR',
-            'propagate': False,
+            'propagate': True,
         },
         'django.db.backends': {
             'handlers': ['file_errors'],
-            'level': 'ERROR',
-            'propagate': False,
+            'propagate': True,
         },
         'django.security': {
             'handlers': ['mail_admins', 'file_security'],
-            'level': 'INFO',
-            'propagate': False,
+            'propagate': True,
         },
     }
 }
